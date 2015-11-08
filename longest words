@@ -1,0 +1,24 @@
+class Solution {
+    /**
+     * @param dictionary: an array of strings
+     * @return: an arraylist of strings
+     */
+    ArrayList<String> longestWords(String[] d) {
+        // write your code here
+        ArrayList temp = new ArrayList();
+        int i = 0;
+        String tt = "";
+        temp.add(d[0]);
+        while(i < d.length - 1){
+            tt = "" + temp.get(0);
+            if(d[i+1].length() > tt.length()){
+                temp.clear();
+                temp.add(d[i+1]);
+            }
+            else if(d[i+1].length() == tt.length())
+                temp.add(d[i+1]);
+            i++;
+        }
+        return temp;
+    }
+};
