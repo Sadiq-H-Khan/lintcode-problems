@@ -1,0 +1,31 @@
+class Solution {
+    /**
+     * Returns a index to the first occurrence of target in source,
+     * or -1  if target is not part of source.
+     * @param source string to be scanned.
+     * @param target string containing the sequence of characters to match.
+     */
+    public int strStr(String source, String target) {
+        //write your code here
+        int z = 0;
+        
+        if(source != null && target != null){
+            z = source.length();
+        } else 
+            return -1;
+        
+        if(target.length() == 0 && z>=0) 
+            return 0;
+        
+        else if(source.equals(target)) 
+            return 0;
+        
+        else if(source.contains(target)){
+            for(int i = 0; i<z; i++){
+                return source.substring(i,z).contains(target) ? i+1:-1;
+            }
+        }
+        
+        return -1;
+    }
+}
