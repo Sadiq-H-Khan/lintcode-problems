@@ -1,0 +1,41 @@
+public class Solution {
+    /**
+     * @param strs: A list of strings
+     * @return: The longest common prefix
+     */
+    public String longestCommonPrefix(String[] strs) {
+        // write your code here
+        List<Character> c = new ArrayList<Character>();
+        boolean b = false;
+        
+        if(strs.length == 0)
+            return "";
+        if(strs.length == 1)
+        return strs[0];
+        
+        for(int i = 0; i < strs[0].length(); i++){
+            for(int j = 0; j < strs.length-1; j++){
+                b = true;
+                
+                if(strs[j].length() == 0 ||strs[j+1].length() == 0)
+                return "";
+                
+                char c1 = strs[j].charAt(i);
+                char c2 = strs[j+1].charAt(i);
+                if(!(""+c1).equals(""+c2)){
+                    b = false;
+                    break;
+                }
+            }
+            if(b)
+                c.add(strs[0].charAt(i));
+            else break;
+        }
+    
+        StringBuilder sb = new StringBuilder(c.size());
+        for (Character c1 : c)
+            sb.append(c1);
+        String s = sb.toString();
+        return s;
+    }
+}
