@@ -1,0 +1,22 @@
+class Solution {
+    /**
+     * @param nums: The integer array.
+     * @param target: Target to find.
+     * @return: The first position of target. Position starts from 0.
+     */
+    public int binarySearch(int[] nums, int target) {
+        //write your code here
+        int size = nums.length, m = size / 2, l = 0, r = size;
+        while(r - l > 1) {
+            if(nums[m] <= target)
+                    l = m;
+            else    r = m;
+            m = (l+r) / 2; 
+        }
+        while(m != 0 && nums[m-1] == target)
+            m--;
+        if(nums[m] == target)
+            return m;
+        else return -1;
+    }
+}
