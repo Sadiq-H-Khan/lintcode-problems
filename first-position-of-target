@@ -11,7 +11,7 @@ class Solution {
             if(nums[m] <= target)
                     l = m;
             else    r = m;
-            m = (l+r) / 2; 
+            m = l + (r-l)/2; 
         }
         while(m != 0 && nums[m-1] == target)
             m--;
