@@ -1,0 +1,17 @@
+public class Solution {
+    /**
+     * @param s A string
+     * @return the length of last word
+     */
+    public int lengthOfLastWord(String s) {
+        // Write your code here
+        s = s.trim();
+        int l = s.length(), count = 0;
+        
+        while(l != 0 && s.charAt(l-1) != ' ') {
+            count++;
+            l--;
+        }
+        return count;
+    }
+}
