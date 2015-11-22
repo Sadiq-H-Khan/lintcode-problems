@@ -1,0 +1,29 @@
+public class Solution {
+    /**
+     * @param str: an array of char
+     * @param offset: an integer
+     * @return: nothing
+     */
+    public char [] rotateString(char[] str, int offset) {
+        // write your code here
+        String s = new String(str);
+        int sLen = s.length();
+        
+        if(sLen == 0)
+        return str;
+        
+        while(offset > sLen)
+        offset -= sLen;
+        
+        String s1 = s.substring(0,(sLen- offset));
+        String s2 = s.substring((sLen- offset), sLen);
+        s = s2 + s1;
+        int i = 0;
+        
+        while(i < s.length()) {
+            str[i] = s.charAt(i);
+            i++;
+        }
+        return str;
+    }
+}
