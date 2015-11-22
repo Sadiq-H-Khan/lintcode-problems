@@ -1,0 +1,31 @@
+public class Solution {
+    /**
+     * @param s : A string
+     * @return : A string
+     */
+    public String reverseWords(String s) {
+        // write your code
+        ArrayList a = new ArrayList();
+        int i = 0;
+        s = s.trim();
+        s = s + " ";
+        String ss = "";
+        while(i < s.length()) {
+            if(s.charAt(i) != ' ')
+            ss = ss +s.charAt(i);
+            else {
+                a.add(ss);
+                ss = "";
+            }
+            i++;
+        }
+        i = a.size() - 1;
+        ss = "";
+        while(i >= 0) {
+            ss = ss + " " + a.get(i);
+            i--;
+        }
+        return ss = ss.trim();
+    }
+}
+
