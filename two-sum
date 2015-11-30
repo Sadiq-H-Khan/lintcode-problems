@@ -1,0 +1,23 @@
+public class Solution {
+    /*
+     * @param numbers : An array of Integer
+     * @param target : target = numbers[index1] + numbers[index2]
+     * @return : [index1 + 1, index2 + 1] (index1 < index2)
+     */
+    public int[] twoSum(int[] numbers, int target) {
+        // write your code here
+        String[] s = new String[numbers.length]; 
+        int[] res = new int[2];
+        for(int i = 0; i < numbers.length; i++) {
+            s[i] = "" + numbers[i];
+        }
+        for(int i = numbers[0], j = 0; j < numbers.length; i = numbers[j++]) {
+            if(Arrays.asList(s).contains("" + (target - i))){
+                res[0] = Arrays.asList(s).indexOf("" + i) + 1;
+                res[1] = Arrays.asList(s).indexOf("" + (target - i)) + 1;
+                return res;
+            }
+        }
+        return res;
+    }
+}
