@@ -1,0 +1,19 @@
+public class Solution {
+    /**    
+     * @param A: an array of integers
+     * @return: an integer
+     */
+    public int firstMissingPositive(int[] A) {
+        // write your code here
+        String s = "";
+        for(int i = 0; i < A.length; i++){
+            s += "," + A[i];
+        }
+        s += ",";
+        for(int i = 1; i <= s.length(); i++){
+            if(!s.contains(","+i+","))
+            return i;
+        }
+        return 1;
+    }
+}
