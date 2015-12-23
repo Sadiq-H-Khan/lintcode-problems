@@ -5,10 +5,10 @@ class Solution {
      */
     public static int bitSwapRequired(int a, int b) {
         // write your code here
-        String s1 = String.format("%33s", Integer.toBinaryString(a)).replace(' ', '0');
-        String s2 = String.format("%33s", Integer.toBinaryString(b)).replace(' ', '0');
+        String s1 = String.format("%32s", Integer.toBinaryString(a)).replace(' ', '0');
+        String s2 = String.format("%32s", Integer.toBinaryString(b)).replace(' ', '0');
         int l  = s1.length()-1, out = 0;
-        while(l > 0){
+        while(l >= 0){
             if(s1.charAt(l) != s2.charAt(l))
             out++;
             l--;
