@@ -21,8 +21,8 @@ class Solution {
         // write your code here
         String s = Integer.toBinaryString(n);
         s = s.replaceFirst("1", "0");
-        if(s.contains("1") || n < 0 || n == 0)
-        return false;
+        if(!s.contains("1") && n > 0)
         return true;
+        return false;
     }
 };
