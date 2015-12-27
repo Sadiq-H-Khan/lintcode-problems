@@ -6,12 +6,11 @@ public class Solution {
      */
     public int woodCut(int[] L, int k) {
         // write your code here
-        Arrays.sort(L);
-        int len = L.length, mid = 0, l = 1, r,
-        sum = 0, temp = 0;
-        if(len == 0)
-        return 0;
-        r = L[len - 1];
+        int len = L.length, mid = 0, l = 1, r = 0, sum = 0, temp = 0;
+        for(int i = 0; i < len; i++){
+            if(L[i] > r)
+            r = L[i];
+        }
         while(l <= r){
             mid = l + (r-l)/2;
             sum = 0;
