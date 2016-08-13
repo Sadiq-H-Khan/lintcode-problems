@@ -10,9 +10,8 @@ public class Solution {
         int l = s.length(), i = 0;
         
         while(l/2 > 0) {
-            if(s.charAt(i) != s.charAt(l-1))
+            if(!s.charAt(i++).equals(s.charAt(--l)))
             return false;
-            l--;i++;
         }
         return true;
     }
